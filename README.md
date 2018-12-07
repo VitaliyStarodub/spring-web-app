@@ -1,5 +1,5 @@
 # Web Application
-Web application based on MVC pattern. Front part of this project on [https://github.com/VitaliyStarodub/angular_face_for_spring_demo]
+Web application based on MVC pattern. Front part of this project on [angular face for spring web app](https://github.com/VitaliyStarodub/angular_face_for_spring_demo)
 ### Technologies stack
 * Java 1.8
 * Spring 4.0.20
