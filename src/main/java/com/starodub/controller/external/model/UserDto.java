@@ -1,18 +1,26 @@
 package com.starodub.controller.external.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.starodub.model.User;
+
 import javax.validation.constraints.NotNull;
 
 public class UserDto {
 
     @NotNull
     private String email;
+    @JsonIgnore
     @NotNull
     private String password;
+    @JsonIgnore
     private String verifiedPassword;
     private String token;
     private String firstName;
     private String lastName;
 
+
+    public UserDto() {
+    }
 
     public UserDto(String email, String password, String verifiedPassword, String token, String firstName, String lastName) {
         this.email = email;
@@ -70,5 +78,15 @@ public class UserDto {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public static UserDto of(User user) {
+        UserDto userDto = new UserDto();
+        userDto.setPassword(user.getPassword());
+        userDto.setEmail(user.getEmail());
+        userDto.setToken(user.getToken());
+        userDto.setFirstName(user.getFirstName());
+        userDto.setLastName(user.getLastName());
+        return userDto;
     }
 }
